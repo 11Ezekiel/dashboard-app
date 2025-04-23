@@ -29,14 +29,28 @@ export default function SortAndExport({
       {/* Sort Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            className="flex items-center gap-2 
+              border-gray-300 dark:border-gray-700 
+              bg-white dark:bg-gray-900 
+              text-black dark:text-white dark:hover:bg-gray-800"
+          >
             Sort: {selectedSort}
             <ChevronDown className="w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuContent
+          className="bg-white dark:bg-gray-900 
+            border-gray-300 dark:border-gray-700 
+            text-black dark:text-white dark:hover:bg-gray-800"
+        >
           {sortOptions.map((option) => (
-            <DropdownMenuItem key={option} onClick={() => handleSelect(option)}>
+            <DropdownMenuItem
+              key={option}
+              onClick={() => handleSelect(option)}
+              className="hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
+            >
               {option}
             </DropdownMenuItem>
           ))}
@@ -44,7 +58,13 @@ export default function SortAndExport({
       </DropdownMenu>
 
       {/* Export Button with Icon */}
-      <Button variant="outline" className="flex items-center gap-2">
+      <Button
+        variant="outline"
+        className="flex items-center gap-2 
+          border-gray-300 dark:border-gray-700 
+          bg-white dark:bg-gray-900 
+          text-black dark:text-white dark:hover:bg-gray-800"
+      >
         <FileDown className="w-4 h-4" />
         Export
       </Button>

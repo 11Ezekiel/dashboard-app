@@ -48,7 +48,9 @@ export default function Home() {
 
   return (
     <main className="flex flex-col gap-6 p-4 sm:p-6 max-w-screen-xl mx-auto w-full">
-      <h1 className="text-2xl font-semibold">Welcome! Here’s your summary</h1>
+      <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-gray-900">
+        Welcome! Here’s your summary
+      </h1>
 
       {/* Summary cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -101,7 +103,9 @@ export default function Home() {
 
       {/* Chart and Carousel */}
       <section className="flex flex-col gap-4 mt-6">
-        <h2 className="text-lg font-semibold">Event Registrations per month</h2>
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-800">
+          Event Registrations per month
+        </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Chart */}
@@ -136,10 +140,12 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-lg font-semibold mb-2">Events History</h2>
-        <div className="pt-2 flex flex-wrap gap-4 items-start">
+        <h2 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-800">
+          Events History
+        </h2>
+        <div className="pt-2 flex flex-col md:flex-row md:flex-wrap md:items-start gap-4">
           {/* Search */}
-          <div className="relative w-full sm:w-64">
+          <div className="relative w-full md:w-64">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
               type="text"
@@ -148,8 +154,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4 flex-1 min-w-[200px]">
+          {/* Dropdowns */}
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
             <FilteredDropdown
               label={selectedDate}
               options={["Newest", "Oldest", "This Month"]}
@@ -168,7 +174,7 @@ export default function Home() {
           </div>
 
           {/* Sort/Export */}
-          <div className="flex gap-2 items-center justify-end min-w-[200px] w-full sm:w-auto">
+          <div className="w-full md:ml-auto md:w-auto">
             <SortAndExport
               onSortChange={(val) => console.log("Sort by:", val)}
             />
