@@ -25,11 +25,14 @@ export default function RootLayout({
           inter.className
         )}
       >
-        {/* 👇 ThemeProvider wraps your layout */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex">
+          <div className="flex flex-col lg:flex-row min-h-screen">
+            {/* Don't wrap Sidebar in an <aside> that sets fixed width */}
             <Sidebar />
-            <main className="flex-1 p-6">{children}</main>
+
+            <main className="flex-1 p-6 transition-all duration-300">
+              {children}
+            </main>
           </div>
         </ThemeProvider>
       </body>

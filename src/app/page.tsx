@@ -53,7 +53,7 @@ export default function Home() {
       </h1>
 
       {/* Summary cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="flex flex-col lg:grid lg:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
             <h3 className="text-sm text-muted-foreground">Total Events</h3>
